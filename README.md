@@ -4,7 +4,7 @@ A responsive carousel for JavaScript, with optional React component wrapper. See
 
 * The config settings are optional in the React Component. It automatically generates and applies a selector. It will fallback to the defaults if no config is passed.
 
-![rescale-carousel demo](docs/assets/demo.gif)
+[![rescale-carousel demo](docs/assets/demo.gif)](https://www.youtube.com/watch?v=vvPyo-rluss)
 
 ## Installation
 
