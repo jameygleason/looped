@@ -10,7 +10,9 @@ export default class ReusableCarousel {
 
     // Resolve selector's type
     this.selector =
-      typeof this.config.selector === 'string' ? document.querySelector(this.config.selector) : this.config.selector;
+      typeof this.config.selector === 'string'
+        ? document.querySelector(this.config.selector)
+        : this.config.selector;
 
     // Early throw if selector doesn't exists
     if (this.selector === null) {
@@ -25,7 +27,13 @@ export default class ReusableCarousel {
     this.innerElements = [].slice.call(this.selector.children);
     this.currentSlide = this.config.loop
       ? this.config.startIndex % this.innerElements.length
-      : Math.max(0, Math.min(this.config.startIndex, this.innerElements.length - this.perPage));
+      : Math.max(
+          0,
+          Math.min(
+            this.config.startIndex,
+            this.innerElements.length - this.perPage
+          )
+        );
     this.transformProperty = ReusableCarousel.webkitOrNot();
 
     // Bind all event handlers for reference-ability
@@ -175,7 +183,9 @@ export default class ReusableCarousel {
    */
   buildSliderFrame() {
     const widthItem = this.selectorWidth / this.perPage;
-    const itemsToBuild = this.config.loop ? this.innerElements.length + 2 * this.perPage : this.innerElements.length;
+    const itemsToBuild = this.config.loop
+      ? this.innerElements.length + 2 * this.perPage
+      : this.innerElements.length;
 
     // Create frame and apply styling
     this.sliderFrame = document.createElement('div');
@@ -191,8 +201,14 @@ export default class ReusableCarousel {
 
     //* Loop through the slides, add styling and add them to document fragment
     if (this.config.loop) {
-      for (let i = this.innerElements.length - this.perPage; i < this.innerElements.length; i++) {
-        const element = this.buildSliderFrameItem(this.innerElements[i].cloneNode(true));
+      for (
+        let i = this.innerElements.length - this.perPage;
+        i < this.innerElements.length;
+        i++
+      ) {
+        const element = this.buildSliderFrameItem(
+          this.innerElements[i].cloneNode(true)
+        );
         docFragment.appendChild(element);
       }
     }
@@ -204,7 +220,9 @@ export default class ReusableCarousel {
 
     if (this.config.loop) {
       for (let i = 0; i < this.perPage; i++) {
-        const element = this.buildSliderFrameItem(this.innerElements[i].cloneNode(true));
+        const element = this.buildSliderFrameItem(
+          this.innerElements[i].cloneNode(true)
+        );
         docFragment.appendChild(element);
       }
     }
@@ -228,7 +246,9 @@ export default class ReusableCarousel {
     elementContainer.style.paddingRight = `${this.config.gap}px`;
 
     elementContainer.style.width = `${
-      this.config.loop ? 100 / (this.innerElements.length + this.perPage * 2) : 100 / this.innerElements.length
+      this.config.loop
+        ? 100 / (this.innerElements.length + this.perPage * 2)
+        : 100 / this.innerElements.length
     }%`;
 
     elementContainer.appendChild(elm);
@@ -278,10 +298,16 @@ export default class ReusableCarousel {
         const mirrorSlideIndex = this.currentSlide + this.innerElements.length;
         const mirrorSlideIndexOffset = this.perPage;
         const moveTo = mirrorSlideIndex + mirrorSlideIndexOffset;
-        const offset = (this.config.rtl ? 1 : -1) * moveTo * (this.selectorWidth / this.perPage);
-        const dragDistance = this.config.draggable ? this.drag.endX - this.drag.startX : 0;
+        const offset =
+          (this.config.rtl ? 1 : -1) *
+          moveTo *
+          (this.selectorWidth / this.perPage);
+        const dragDistance = this.config.draggable
+          ? this.drag.endX - this.drag.startX
+          : 0;
 
-        this.sliderFrame.style[this.transformProperty] = `translate3d(${offset + dragDistance}px, 0, 0)`;
+        this.sliderFrame.style[this.transformProperty] = `translate3d(${offset +
+          dragDistance}px, 0, 0)`;
         this.currentSlide = mirrorSlideIndex - howManySlides;
       } else {
         this.currentSlide = this.currentSlide - howManySlides;
@@ -313,23 +339,34 @@ export default class ReusableCarousel {
     const beforeChange = this.currentSlide;
 
     if (this.config.loop) {
-      const isNewIndexClone = this.currentSlide + howManySlides > this.innerElements.length - this.perPage;
+      const isNewIndexClone =
+        this.currentSlide + howManySlides >
+        this.innerElements.length - this.perPage;
       if (isNewIndexClone) {
         this.disableTransition();
 
         const mirrorSlideIndex = this.currentSlide - this.innerElements.length;
         const mirrorSlideIndexOffset = this.perPage;
         const moveTo = mirrorSlideIndex + mirrorSlideIndexOffset;
-        const offset = (this.config.rtl ? 1 : -1) * moveTo * (this.selectorWidth / this.perPage);
-        const dragDistance = this.config.draggable ? this.drag.endX - this.drag.startX : 0;
+        const offset =
+          (this.config.rtl ? 1 : -1) *
+          moveTo *
+          (this.selectorWidth / this.perPage);
+        const dragDistance = this.config.draggable
+          ? this.drag.endX - this.drag.startX
+          : 0;
 
-        this.sliderFrame.style[this.transformProperty] = `translate3d(${offset + dragDistance}px, 0, 0)`;
+        this.sliderFrame.style[this.transformProperty] = `translate3d(${offset +
+          dragDistance}px, 0, 0)`;
         this.currentSlide = mirrorSlideIndex + howManySlides;
       } else {
         this.currentSlide = this.currentSlide + howManySlides;
       }
     } else {
-      this.currentSlide = Math.min(this.currentSlide + howManySlides, this.innerElements.length - this.perPage);
+      this.currentSlide = Math.min(
+        this.currentSlide + howManySlides,
+        this.innerElements.length - this.perPage
+      );
     }
     if (beforeChange !== this.currentSlide) {
       this.slideToCurrent(this.config.loop);
@@ -352,8 +389,12 @@ export default class ReusableCarousel {
    * Enable transition on sliderFrame.
    */
   enableTransition() {
-    this.sliderFrame.style.webkitTransition = `all ${this.config.transitionDuration}ms ${this.config.easing}`;
-    this.sliderFrame.style.transition = `all ${this.config.transitionDuration}ms ${this.config.easing}`;
+    this.sliderFrame.style.webkitTransition = `all ${
+      this.config.transitionDuration
+    }ms ${this.config.easing}`;
+    this.sliderFrame.style.transition = `all ${
+      this.config.transitionDuration
+    }ms ${this.config.easing}`;
   }
 
   /**
@@ -382,8 +423,13 @@ export default class ReusableCarousel {
    * Moves sliders frame to position of currently active slide
    */
   slideToCurrent(enableTransition) {
-    const currentSlide = this.config.loop ? this.currentSlide + this.perPage : this.currentSlide;
-    const offset = (this.config.rtl ? 1 : -1) * currentSlide * (this.selectorWidth / this.perPage);
+    const currentSlide = this.config.loop
+      ? this.currentSlide + this.perPage
+      : this.currentSlide;
+    const offset =
+      (this.config.rtl ? 1 : -1) *
+      currentSlide *
+      (this.selectorWidth / this.perPage);
 
     if (enableTransition) {
       // This one is tricky, I know but this is a perfect explanation:
@@ -391,11 +437,15 @@ export default class ReusableCarousel {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           this.enableTransition();
-          this.sliderFrame.style[this.transformProperty] = `translate3d(${offset}px, 0, 0)`;
+          this.sliderFrame.style[
+            this.transformProperty
+          ] = `translate3d(${offset}px, 0, 0)`;
         });
       });
     } else {
-      this.sliderFrame.style[this.transformProperty] = `translate3d(${offset}px, 0, 0)`;
+      this.sliderFrame.style[
+        this.transformProperty
+      ] = `translate3d(${offset}px, 0, 0)`;
     }
   }
 
@@ -405,19 +455,31 @@ export default class ReusableCarousel {
    * Recalculate drag/swipe event and reposition the frame of a slider
    */
   updateAfterDrag() {
-    const movement = (this.config.rtl ? -1 : 1) * (this.drag.endX - this.drag.startX);
+    const movement =
+      (this.config.rtl ? -1 : 1) * (this.drag.endX - this.drag.startX);
     const movementDistance = Math.abs(movement);
     const howManySliderToSlide = this.config.multipleDrag
       ? Math.ceil(movementDistance / (this.selectorWidth / this.perPage))
       : 1;
 
-    const slideToNegativeClone = movement > 0 && this.currentSlide - howManySliderToSlide < 0;
+    const slideToNegativeClone =
+      movement > 0 && this.currentSlide - howManySliderToSlide < 0;
     const slideToPositiveClone =
-      movement < 0 && this.currentSlide + howManySliderToSlide > this.innerElements.length - this.perPage;
+      movement < 0 &&
+      this.currentSlide + howManySliderToSlide >
+        this.innerElements.length - this.perPage;
 
-    if (movement > 0 && movementDistance > this.config.threshold && this.innerElements.length > this.perPage) {
+    if (
+      movement > 0 &&
+      movementDistance > this.config.threshold &&
+      this.innerElements.length > this.perPage
+    ) {
       this.prev(howManySliderToSlide);
-    } else if (movement < 0 && movementDistance > this.config.threshold && this.innerElements.length > this.perPage) {
+    } else if (
+      movement < 0 &&
+      movementDistance > this.config.threshold &&
+      this.innerElements.length > this.perPage
+    ) {
       this.next(howManySliderToSlide);
     }
     this.slideToCurrent(slideToNegativeClone || slideToPositiveClone);
@@ -433,7 +495,10 @@ export default class ReusableCarousel {
     // re-calculate currentSlide
     // prevent hiding items when browser width increases
     if (this.currentSlide + this.perPage > this.innerElements.length) {
-      this.currentSlide = this.innerElements.length <= this.perPage ? 0 : this.innerElements.length - this.perPage;
+      this.currentSlide =
+        this.innerElements.length <= this.perPage
+          ? 0
+          : this.innerElements.length - this.perPage;
     }
 
     this.selectorWidth = this.selector.offsetWidth;
@@ -459,7 +524,9 @@ export default class ReusableCarousel {
    */
   touchstartHandler(e) {
     // Prevent dragging / swiping on inputs, selects and textareas
-    const ignoreSiema = ['TEXTAREA', 'OPTION', 'INPUT', 'SELECT'].indexOf(e.target.nodeName) !== -1;
+    const ignoreSiema =
+      ['TEXTAREA', 'OPTION', 'INPUT', 'SELECT'].indexOf(e.target.nodeName) !==
+      -1;
     if (ignoreSiema) {
       return;
     }
@@ -491,7 +558,8 @@ export default class ReusableCarousel {
 
     if (this.drag.letItGo === null) {
       this.drag.letItGo =
-        Math.abs(this.drag.startY - e.touches[0].pageY) < Math.abs(this.drag.startX - e.touches[0].pageX);
+        Math.abs(this.drag.startY - e.touches[0].pageY) <
+        Math.abs(this.drag.startX - e.touches[0].pageX);
     }
 
     if (this.pointerDown && this.drag.letItGo) {
@@ -500,11 +568,18 @@ export default class ReusableCarousel {
       this.sliderFrame.style.webkitTransition = `all 0ms ${this.config.easing}`;
       this.sliderFrame.style.transition = `all 0ms ${this.config.easing}`;
 
-      const currentSlide = this.config.loop ? this.currentSlide + this.perPage : this.currentSlide;
+      const currentSlide = this.config.loop
+        ? this.currentSlide + this.perPage
+        : this.currentSlide;
       const currentOffset = currentSlide * (this.selectorWidth / this.perPage);
       const dragOffset = this.drag.endX - this.drag.startX;
-      const offset = this.config.rtl ? currentOffset + dragOffset : currentOffset - dragOffset;
-      this.sliderFrame.style[this.transformProperty] = `translate3d(${(this.config.rtl ? 1 : -1) * offset}px, 0, 0)`;
+      const offset = this.config.rtl
+        ? currentOffset + dragOffset
+        : currentOffset - dragOffset;
+      this.sliderFrame.style[this.transformProperty] = `translate3d(${(this
+        .config.rtl
+        ? 1
+        : -1) * offset}px, 0, 0)`;
     }
   }
 
@@ -513,7 +588,9 @@ export default class ReusableCarousel {
    */
   mousedownHandler(e) {
     // Prevent dragging / swiping on inputs, selects and textareas
-    const ignoreSiema = ['TEXTAREA', 'OPTION', 'INPUT', 'SELECT'].indexOf(e.target.nodeName) !== -1;
+    const ignoreSiema =
+      ['TEXTAREA', 'OPTION', 'INPUT', 'SELECT'].indexOf(e.target.nodeName) !==
+      -1;
     if (ignoreSiema) {
       return;
     }
@@ -556,11 +633,18 @@ export default class ReusableCarousel {
       this.sliderFrame.style.webkitTransition = `all 0ms ${this.config.easing}`;
       this.sliderFrame.style.transition = `all 0ms ${this.config.easing}`;
 
-      const currentSlide = this.config.loop ? this.currentSlide + this.perPage : this.currentSlide;
+      const currentSlide = this.config.loop
+        ? this.currentSlide + this.perPage
+        : this.currentSlide;
       const currentOffset = currentSlide * (this.selectorWidth / this.perPage);
       const dragOffset = this.drag.endX - this.drag.startX;
-      const offset = this.config.rtl ? currentOffset + dragOffset : currentOffset - dragOffset;
-      this.sliderFrame.style[this.transformProperty] = `translate3d(${(this.config.rtl ? 1 : -1) * offset}px, 0, 0)`;
+      const offset = this.config.rtl
+        ? currentOffset + dragOffset
+        : currentOffset - dragOffset;
+      this.sliderFrame.style[this.transformProperty] = `translate3d(${(this
+        .config.rtl
+        ? 1
+        : -1) * offset}px, 0, 0)`;
     }
   }
 
@@ -640,8 +724,11 @@ export default class ReusableCarousel {
     }
 
     // Avoid shifting content
-    const shouldItShift = index <= this.currentSlide > 0 && this.innerElements.length;
-    this.currentSlide = shouldItShift ? this.currentSlide + 1 : this.currentSlide;
+    const shouldItShift =
+      index <= this.currentSlide > 0 && this.innerElements.length;
+    this.currentSlide = shouldItShift
+      ? this.currentSlide + 1
+      : this.currentSlide;
 
     this.innerElements.splice(index, 0, item);
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import ReusableCarousel from 'rescale-carousel';
+import ReusableCarousel from './rescale-carousel';
 
 class Carousel extends Component {
   static propTypes = {
