@@ -4,6 +4,8 @@ A responsive carousel for JavaScript, with optional React component wrapper. See
 
 * The config settings are optional in the React Component. It automatically generates and applies a selector. It will fallback to the defaults if no config is passed.
 
+![rescale-carousel demo](docs/assets/demo.gif)
+
 ## Installation
 
 `npm install rescale-carousel`
@@ -18,7 +20,7 @@ A responsive carousel for JavaScript, with optional React component wrapper. See
 ```
 
 ```js
-import Carousel from './rescale-carousel';
+import Carousel from 'rescale-carousel';
 
 // Will initialize with default settings
 new Carousel({
