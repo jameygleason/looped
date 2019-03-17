@@ -7365,9 +7365,9 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
 
-rescale-carousel@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/rescale-carousel/-/rescale-carousel-0.0.4.tgz#598642e8dd1a097d2ce3f754d1c05755a3992eda"
+rescale-carousel@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/rescale-carousel/-/rescale-carousel-0.0.6.tgz#fc1c48f6cf980f59cfe1c54b5f89baeb87e19ea6"
   dependencies:
     babel-eslint "^10.0.1"
 
