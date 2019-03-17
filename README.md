@@ -1,6 +1,6 @@
 # Rescale Carousel
 
-A responsive carousel for JavaScript, with optional React component wrapper. See examples in the [github](https://github.com/jameygleason/rescale-carousel/tree/master/examples/react).
+A responsive carousel for JavaScript, with optional React component wrapper. See examples in the [github](https://github.com/jameygleason/rescale-carousel/tree/master/examples).
 
 * The config settings are optional in the React Component. It automatically generates and applies a selector. It will fallback to the defaults if no config is passed.
 
