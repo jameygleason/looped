@@ -1,33 +1,46 @@
 {
-  "name": "react_carousel",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "name": "rescale-carousel",
+  "version": "1.0.1",
+  "description": "Rescalable carousel with optional React wrapper component.",
+  "main": "webpack.config.js",
+  "directories": {
+    "example": "examples"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameygleason/rescale-carousel.git"
+  },
+  "keywords": [
+    "carousel",
+    "react",
+    "react carousel"
   ],
-  "dependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5",
-    "styled-components": "^4.1.3"
+  "author": "Jamey Gleason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jameygleason/rescale-carousel/issues"
+  },
+  "homepage": "https://github.com/jameygleason/rescale-carousel#readme",
+  "scripts": {
+    "build": "webpack && cp dist/rescale-carousel.min.js docs/assets",
+    "dev": "webpack --progress --colors --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "eslint": "^5.15.2",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
+    "eslint-import-resolver-babel-module": "^5.0.1",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-graphql": "^3.0.3",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.16.4"
+    "webpack": "^4.29.6"
   }
 }
