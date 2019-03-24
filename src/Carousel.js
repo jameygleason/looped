@@ -1,16 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
 import ReusableCarousel from './rescale-carousel';
 
 class Carousel extends Component {
   static propTypes = {
     className: PropTypes.string,
+    config: PropTypes.shape({
+      selector: PropTypes.string,
+      transitionDuration: PropTypes.number,
+      easing: PropTypes.string,
+      perPage: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+      gap: PropTypes.number,
+      startIndex: PropTypes.number,
+      draggable: PropTypes.bool,
+      multipleDrag: PropTypes.bool,
+      threshold: PropTypes.number,
+      loop: PropTypes.bool,
+      animate: PropTypes.bool,
+      intervalDuration: PropTypes.number,
+      rtl: PropTypes.bool,
+      onInit: PropTypes.func,
+      onChange: PropTypes.func,
+      destroy: PropTypes.func,
+    }),
+    children: PropTypes.node,
+    prev: PropTypes.func,
+    next: PropTypes.func,
   };
 
   static defaultProps = {
     className: null,
+    prev: null,
+    next: null,
   };
 
   constructor() {
@@ -47,47 +68,41 @@ class Carousel extends Component {
   };
 
   render() {
-    const { children, className, width, prev, next } = this.props;
+    const { children, className, prev, next } = this.props;
 
     return (
-      <CarouselOuterWrapper className={`carousel-outer ${className}`}>
+      <div
+        className={`carousel-outer ${className}`}
+        style={{ position: 'relative' }}
+      >
         {typeof document !== 'undefined' && (
           <>
             {/* To use Prev functionality, you would pass an arrow function (render prop) to a `prev` prop. (<- On the `Carousel` component you have imported in another file.)
             
             That arrow function will take a prev param and get passed to a click handler. Like so...
-
             (prev) => <button onClick={prev}>Prev</button>
           */}
 
             {prev && prev(this.prev)}
 
-            <CarouselWrapper className={`${this.state.selector} carousel-inner ${className}`} width={width}>
+            <div
+              className={`${this.state.selector} carousel-inner ${className}`}
+            >
               {children}
-            </CarouselWrapper>
+            </div>
 
             {/* To use Next functionality, you would pass an arrow function (render prop) to a `next` prop. (<- On the `Carousel` component you have imported in another file.) 
             
             That arrow function will take a next param and get passed to a click handler. Like so...
-
             (next) => <button onClick={next}>Next</button>
           */}
 
             {next && next(this.next)}
           </>
         )}
-      </CarouselOuterWrapper>
+      </div>
     );
   }
 }
-
-const CarouselOuterWrapper = styled.div`
-  position: relative;
-`;
-
-const CarouselWrapper = styled.div`
-  width: ${({ width }) => width || 'auto'};
-  height: ${({ height }) => height || 'auto'};
-`;
 
 export default Carousel;

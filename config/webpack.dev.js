@@ -34,7 +34,11 @@ const modules = {
       exclude: /(node_modules)/,
       loader: 'babel-loader',
       query: {
-        presets: ['@babel/preset-env'],
+        presets: [
+          ['@babel/preset-env', { debug: false }],
+          '@babel/preset-react',
+        ],
+        plugins: ['@babel/plugin-proposal-class-properties'],
       },
     },
   ],

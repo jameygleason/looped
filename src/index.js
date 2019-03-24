@@ -1,4 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import Carousel from './rescale-carousel';
+import App from './App';
 
 // Will initialize with default settings
 const caro = new Carousel({
@@ -6,4 +9,6 @@ const caro = new Carousel({
   perPage: 3,
 });
 
-export default caro;
+ReactDOM.render(<App />, document.getElementById('root'));
+
+export default [caro, App];

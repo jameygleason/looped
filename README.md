@@ -59,9 +59,11 @@ Pass an object to `perPage` and prefix window width with `w`. Since the default 
 new Carousel({
   ...
   perPage: {
-    w400: 1,
+    // Falls back to the default of 1 below 750px
     w750: 3,
     w1200: 5,
+    w1400: 6,
+  },
   },
   ...
 });
@@ -74,7 +76,7 @@ Prop                 | Data Type  | Default   | Required  | Description
 `selector`           | String     | N/A       | `true`    | Enable selector
 `transitionDuration` | Number     | `420`     | `false`   | The time (in ms) between when the slide chip starts it's transition, to when it finishes moving.
 `easing`             | String     | `ease-out`| `false`   | The "ease" value on the transition property.
-`perPage`           | Number or Objest | `1`  | `false`   | The number of slides to be shown per page. See example for responsive carousel.
+`perPage`           | Number or Object | `1`  | `false`   | The number of slides to be shown per page. See example for responsive carousel.
 `gap`               | Number      | `0`    | `false`   | The space between slides.
 `startIndex`        | Number      | `1`    | `false`   | The index of the starting index
 `draggable`         | Boolean     | `true` | `false`   | Use dragging and touch swiping
