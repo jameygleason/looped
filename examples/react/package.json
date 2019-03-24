@@ -1,5 +1,5 @@
 {
-  "name": "react_carousel",
+  "name": "rescale-carousel-react",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,7 +19,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
-    "rescale-carousel": "^0.0.6",
+    "rescale-carousel": "^0.1.2",
     "styled-components": "^4.1.3"
   },
   "devDependencies": {

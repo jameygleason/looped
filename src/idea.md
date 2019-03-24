@@ -1,1 +1,0 @@
-Make it so the 'Carousel.js' component and 'rescale-carousel.js' go into the root react folder as a bundle with their dependencies.

@@ -1,12 +1,12 @@
-export default class Carousel {
+export default class RescaleCarousel {
   /**
-   * Create a Carousel.
+   * Create a RescaleCarousel.
    * @param {Object} options - Optional settings object.
    */
 
   constructor(options) {
     // Merge defaults with user's settings
-    this.config = Carousel.mergeSettings(options);
+    this.config = RescaleCarousel.mergeSettings(options);
 
     // Resolve selector's type
     this.selector =
@@ -34,7 +34,7 @@ export default class Carousel {
             this.innerElements.length - this.perPage
           )
         );
-    this.transformProperty = Carousel.webkitOrNot();
+    this.transformProperty = RescaleCarousel.webkitOrNot();
 
     // Bind all event handlers for reference-ability
     [
@@ -62,7 +62,7 @@ export default class Carousel {
    */
   static mergeSettings(options) {
     const defaultSettings = {
-      selector: '.reusable_carousel',
+      selector: '.rescale_carousel',
       transitionDuration: 420,
       easing: 'ease-out',
       perPage: 1,
@@ -668,7 +668,7 @@ export default class Carousel {
    */
   clickHandler(e) {
     // if the dragged element is a link
-    // prevent browsers from folowing the link
+    // prevent browsers from following the link
     if (this.drag.preventClick) {
       e.preventDefault();
     }
@@ -690,7 +690,7 @@ export default class Carousel {
     }
 
     // Shift sliderFrame back by one item when:
-    // 1. Item with lower index than currenSlide is removed.
+    // 1. Item with lower index than currentSlide is removed.
     // 2. Last item is removed.
     const lowerIndex = index < this.currentSlide;
     const lastItem = this.currentSlide + this.perPage - 1 === index;

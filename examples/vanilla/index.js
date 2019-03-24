@@ -1,4 +1,4 @@
-import Carousel from 'rescale-carousel';
+import RescaleCarousel from 'rescale-carousel';
 
 const selector = '.carousel';
 const carousel = document.querySelector(selector);
@@ -16,9 +16,20 @@ const config = {
 // Will initialize with default settings
 const initCarousel =
   carousel &&
-  new Carousel({
+  new RescaleCarousel({
     selector,
     ...config,
   });
+
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+prev.addEventListener('click', function() {
+  initCarousel.prev();
+});
+
+next.addEventListener('click', function() {
+  initCarousel.next();
+});
 
 initCarousel();

@@ -1,11 +1,17 @@
 import React from 'react';
-import Carousel from './Carousel';
+import RescaleCarouselReact from './RescaleCarouselReact';
 
 const config = {
   transitionDuration: 420,
   easing: 'ease-out',
-  perPage: 3,
-  gap: 0,
+  perPage: {
+    // Falls back to the default of 1 below 750px
+    w750: 3,
+    w1000: 4,
+    w1200: 5,
+    w1400: 6,
+  },
+  gap: 5,
   startIndex: 0,
   draggable: true,
   multipleDrag: true,
@@ -20,7 +26,7 @@ const config = {
 };
 
 const App = () => (
-  <Carousel
+  <RescaleCarouselReact
     config={config}
     prev={prev => (
       <button type="button" onClick={prev}>
@@ -47,7 +53,7 @@ const App = () => (
     <img src="https://source.unsplash.com/random/400x400?i=12" alt="" />
     <img src="https://source.unsplash.com/random/400x400" alt="" />
     <img src="https://source.unsplash.com/random/425x425?j=13" alt="" />
-  </Carousel>
+  </RescaleCarouselReact>
 );
 
 export default App;

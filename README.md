@@ -20,10 +20,10 @@ A responsive carousel for JavaScript, with optional React component wrapper. See
 ```
 
 ```js
-import Carousel from 'rescale-carousel';
+import RescaleCarousel from 'rescale-carousel';
 
 // Will initialize with default settings
-new Carousel({
+new RescaleCarousel({
   selector: '.carousel'
 });
 ```
@@ -31,7 +31,7 @@ new Carousel({
 ### Default settings
 
 ```js
-new Carousel({
+new RescaleCarousel({
   selector: '.carousel',
   transitionDuration: 420,
   easing: 'ease-out',
@@ -56,7 +56,7 @@ new Carousel({
 Pass an object to `perPage` and prefix window width with `w`. Since the default is 1, the properties are applied from narrowest window width to widest window width.
 
 ```js
-new Carousel({
+new RescaleCarousel({
   ...
   perPage: {
     // Falls back to the default of 1 below 750px
