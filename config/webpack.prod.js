@@ -30,8 +30,7 @@ module.exports = {
         exclude: /(node_modules)/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015'],
-          plugins: ['babel-plugin-add-module-exports'],
+          presets: ['@babel/preset-env'],
         },
       },
     ],

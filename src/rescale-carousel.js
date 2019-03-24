@@ -1,12 +1,12 @@
-export default class ReusableCarousel {
+export default class Carousel {
   /**
-   * Create a ReusableCarousel.
+   * Create a Carousel.
    * @param {Object} options - Optional settings object.
    */
 
   constructor(options) {
     // Merge defaults with user's settings
-    this.config = ReusableCarousel.mergeSettings(options);
+    this.config = Carousel.mergeSettings(options);
 
     // Resolve selector's type
     this.selector =
@@ -34,7 +34,7 @@ export default class ReusableCarousel {
             this.innerElements.length - this.perPage
           )
         );
-    this.transformProperty = ReusableCarousel.webkitOrNot();
+    this.transformProperty = Carousel.webkitOrNot();
 
     // Bind all event handlers for reference-ability
     [
