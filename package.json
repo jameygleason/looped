@@ -1,6 +1,6 @@
 {
   "name": "rescale-carousel",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Jamey Gleason",
   "license": "MIT",
   "description": "Rescalable carousel with optional React wrapper component.",
