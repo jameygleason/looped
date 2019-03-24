@@ -1,10 +1,10 @@
 {
   "name": "rescale-carousel",
-  "version": "0.0.10",
+  "version": "0.1.2",
   "author": "Jamey Gleason",
   "license": "MIT",
   "description": "Rescalable carousel with optional React wrapper component.",
-  "main": "dist/rescale-carousel.min.js",
+  "main": "dist/rescale-carousel.js",
   "files": [
     "dist",
     "react"
@@ -26,9 +26,8 @@
   },
   "homepage": "https://github.com/jameygleason/rescale-carousel#readme",
   "scripts": {
-    "build": "webpack --progress --profile --config config/webpack.prod.js && cp dist/rescale-carousel.min.js docs/assets",
     "dev": "webpack-dev-server --colors --config config/webpack.dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --progress --profile --config config/webpack.prod.js --env.NODE_ENV=production && cp dist/rescale-carousel.js docs/assets"
   },
   "browserslist": [
     ">0.2%",
@@ -61,6 +60,7 @@
     "react-dom": "^16.8.5",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.6",
+    "webpack-bundle-analyzer": "^3.1.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },

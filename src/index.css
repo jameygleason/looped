@@ -12,9 +12,8 @@ html {
   padding: 0;
 }
 
-body {
+body, #root {
   font-family: sans-serif;
-  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

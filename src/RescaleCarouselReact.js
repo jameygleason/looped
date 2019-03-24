@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReusableCarousel from './rescale-carousel';
+import RescaleCarousel from './rescale-carousel';
 
-class Carousel extends Component {
+export default class RescaleCarouselReact extends Component {
   static propTypes = {
     className: PropTypes.string,
     config: PropTypes.shape({
@@ -41,16 +41,15 @@ class Carousel extends Component {
       .toString(36)
       .substring(6);
 
-    this.state = {
-      selector: `carousel-${selectorID}`,
-    };
+    this.selector = `carousel-${selectorID}`;
   }
 
   componentDidMount = () => {
     this.carousel =
-      document &&
-      new ReusableCarousel({
-        selector: `.${this.state.selector}`,
+      typeof document !== 'undefined' &&
+      this.selector &&
+      new RescaleCarousel({
+        selector: `.${this.selector}`,
         ...this.props.config,
       });
   };
@@ -85,9 +84,7 @@ class Carousel extends Component {
 
             {prev && prev(this.prev)}
 
-            <div
-              className={`${this.state.selector} carousel-inner ${className}`}
-            >
+            <div className={`${this.selector} carousel-inner ${className}`}>
               {children}
             </div>
 
@@ -104,5 +101,3 @@ class Carousel extends Component {
     );
   }
 }
-
-export default Carousel;
