@@ -19,7 +19,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
-    "rescale-carousel": "^0.1.2",
+    "rescale-carousel": "^0.1.4",
     "styled-components": "^4.1.3"
   },
   "devDependencies": {

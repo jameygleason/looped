@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styled from 'styled-components';
 import RescaleCarouselReact from 'rescale-carousel/react';
 
 // Optional CONFIG start
@@ -28,7 +28,7 @@ const config = {
 // Optional CONFIG end
 
 const App = () => (
-  <>
+  <Wrapper>
     <h1>Rescale Carousel React</h1>
     <RescaleCarouselReact
       // Optional CONFIG start
@@ -62,7 +62,44 @@ const App = () => (
       <img src="https://source.unsplash.com/random/525x525" alt="" />
       <img src="https://source.unsplash.com/random/550x550" alt="" />
     </RescaleCarouselReact>
-  </>
+  </Wrapper>
 );
+
+const Wrapper = styled.div`
+  .carousel-outer {
+    width: 96vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-inner {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  img {
+    margin: 0 auto;
+    display: block;
+    max-height: 350px;
+    height: 100%;
+    max-width: 350px;
+    width: 100%;
+  }
+
+  button {
+    all: unset;
+  }
+
+  button span {
+    font-size: 35px;
+  }
+`;
 
 export default App;
