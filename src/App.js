@@ -2,7 +2,7 @@ import React from 'react';
 import RescaleCarouselReact from './RescaleCarouselReact';
 
 const config = {
-  transitionDuration: 420,
+  transitionDuration: 450,
   easing: 'ease-out',
   perPage: {
     // Falls back to the default of 1 below 750px

@@ -63,7 +63,7 @@ export default class RescaleCarousel {
   static mergeSettings(options) {
     const defaultSettings = {
       selector: '.rescale_carousel',
-      transitionDuration: 420,
+      transitionDuration: 450,
       easing: 'ease-out',
       perPage: 1,
       gap: 0,
