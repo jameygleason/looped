@@ -1,10 +1,14 @@
 {
   "name": "rescale-carousel",
-  "version": "0.1.4",
+  "version": "0.1.22",
   "author": "Jamey Gleason",
   "license": "MIT",
   "description": "Rescalable carousel with optional React wrapper component.",
   "main": "dist/rescale-carousel.js",
+  "scripts": {
+    "start": "sh ./scripts/npm_install.sh && webpack-dev-server --colors --config config/webpack.dev.js",
+    "build": "sh ./scripts/build.sh"
+  },
   "files": [
     "dist",
     "react"
@@ -25,14 +29,10 @@
     "url": "https://github.com/jameygleason/rescale-carousel/issues"
   },
   "homepage": "https://github.com/jameygleason/rescale-carousel#readme",
-  "scripts": {
-    "dev": "webpack-dev-server --colors --config config/webpack.dev.js",
-    "build": "webpack --progress --profile --config config/webpack.prod.js --env.NODE_ENV=production && cp dist/rescale-carousel.js docs/assets"
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
-    "not ie <= 11",
+    "not ie <= 10",
     "not op_mini all"
   ],
   "devDependencies": {
@@ -56,13 +56,15 @@
     "html-loader": "^0.5.5",
     "prettier": "^1.16.4",
     "prop-types": "^15.7.2",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.6",
     "webpack-bundle-analyzer": "^3.1.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "next": "^8.1.0"
+  }
 }

@@ -242,8 +242,8 @@ export default class RescaleCarousel {
     const elementContainer = document.createElement('div');
     elementContainer.style.cssFloat = this.config.rtl ? 'right' : 'left';
     elementContainer.style.float = this.config.rtl ? 'right' : 'left';
-    elementContainer.style.paddingLeft = `${this.config.gap}px`;
-    elementContainer.style.paddingRight = `${this.config.gap}px`;
+    elementContainer.style.paddingLeft = `${this.config.gap / 2}px`;
+    elementContainer.style.paddingRight = `${this.config.gap / 2}px`;
 
     elementContainer.style.width = `${
       this.config.loop

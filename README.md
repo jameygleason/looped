@@ -124,3 +124,21 @@ https://www.npmjs.com/package/rescale-carousel
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+## Common Gotchas
+
+Gap throws off my image spacing. What gives?
+
+Solution: Add this to your CSS
+
+```css
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+```

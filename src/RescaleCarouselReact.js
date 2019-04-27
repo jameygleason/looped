@@ -46,7 +46,8 @@ export default class RescaleCarouselReact extends Component {
 
   componentDidMount = () => {
     this.carousel =
-      typeof document !== 'undefined' &&
+      window &&
+      document &&
       this.selector &&
       new RescaleCarousel({
         selector: `.${this.selector}`,
@@ -70,33 +71,26 @@ export default class RescaleCarouselReact extends Component {
     const { children, className, prev, next } = this.props;
 
     return (
-      <div
-        className={`carousel-outer ${className}`}
-        style={{ position: 'relative' }}
-      >
-        {typeof document !== 'undefined' && (
-          <>
-            {/* To use Prev functionality, you would pass an arrow function (render prop) to a `prev` prop. (<- On the `Carousel` component you have imported in another file.)
+      <div className={`carousel-outer ${className}`}>
+        {/* To use Prev functionality, you would pass an arrow function (render prop) to a `prev` prop. (<- On the `Carousel` component you have imported in another file.)
             
             That arrow function will take a prev param and get passed to a click handler. Like so...
             (prev) => <button onClick={prev}>Prev</button>
           */}
 
-            {prev && prev(this.prev)}
+        {prev && prev(this.prev)}
 
-            <div className={`${this.selector} carousel-inner ${className}`}>
-              {children}
-            </div>
+        <div className={`${this.selector} carousel-inner ${className}`}>
+          {children}
+        </div>
 
-            {/* To use Next functionality, you would pass an arrow function (render prop) to a `next` prop. (<- On the `Carousel` component you have imported in another file.) 
+        {/* To use Next functionality, you would pass an arrow function (render prop) to a `next` prop. (<- On the `Carousel` component you have imported in another file.) 
             
             That arrow function will take a next param and get passed to a click handler. Like so...
             (next) => <button onClick={next}>Next</button>
           */}
 
-            {next && next(this.next)}
-          </>
-        )}
+        {next && next(this.next)}
       </div>
     );
   }
