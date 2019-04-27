@@ -64,7 +64,5 @@
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },
-  "dependencies": {
-    "next": "^8.1.0"
-  }
+  "dependencies": {}
 }
