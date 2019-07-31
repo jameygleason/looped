@@ -283,6 +283,14 @@ export default class RescaleCarousel {
    * @param {function} callback - Optional callback function.
    */
   prev(howManySlides = 1, callback) {
+    if (this.config.animate === true) {
+      clearInterval(this.setAnimationInterval);
+
+      this.setAnimationInterval = setInterval(() => {
+        this.next();
+      }, this.config.intervalDuration);
+    }
+
     // early return when there is nothing to slide
     if (this.innerElements.length <= this.perPage) {
       return;
@@ -331,6 +339,14 @@ export default class RescaleCarousel {
    * @param {function} callback - Optional callback function.
    */
   next(howManySlides = 1, callback) {
+    if (this.config.animate === true) {
+      clearInterval(this.setAnimationInterval);
+
+      this.setAnimationInterval = setInterval(() => {
+        this.next();
+      }, this.config.intervalDuration);
+    }
+
     // early return when there is nothing to slide
     if (this.innerElements.length <= this.perPage) {
       return;
