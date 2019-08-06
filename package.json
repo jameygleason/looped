@@ -1,9 +1,9 @@
 {
-  "name": "looped-carousel",
+  "name": "looped",
   "version": "1.0.0",
   "author": "Jamey Gleason",
   "license": "MIT",
-  "description": "Rescalable carousel with optional React wrapper component.",
+  "description": "A Vanilla JS Carousel that scales with the browser",
   "main": "dist/looped-carousel.js",
   "scripts": {
     "start": "sh ./scripts/npm_install.sh && webpack-dev-server --colors --config config/webpack.dev.js",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jameygleason/looped-carousel.git"
+    "url": "git+https://github.com/jameygleason/looped.git"
   },
   "keywords": [
     "carousel",
@@ -27,9 +27,9 @@
     "react carousel"
   ],
   "bugs": {
-    "url": "https://github.com/jameygleason/looped-carousel/issues"
+    "url": "https://github.com/jameygleason/looped/issues"
   },
-  "homepage": "https://github.com/jameygleason/looped-carousel#readme",
+  "homepage": "https://github.com/jameygleason/looped#readme",
   "browserslist": [
     ">0.2%",
     "not dead",
