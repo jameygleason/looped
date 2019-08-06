@@ -1,13 +1,15 @@
 {
-  "name": "looped-carousel-vanilla-js",
+  "name": "looped-carousel-demo-vanilla-js",
+  "private": true,
   "version": "1.0.0",
+  "author": "Jamey Gleason <jg.webmedia@gmail.com>",
+  "license": "MIT",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html"
   },
-  "author": "Jamey Gleason",
   "dependencies": {
-    "parcel-bundler": "^1.12.2",
-    "looped-carousel": "^0.1.21"
+    "looped": "^1.0.1",
+    "parcel-bundler": "^1.12.2"
   }
 }

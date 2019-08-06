@@ -59,7 +59,7 @@ export default class LoopedCarousel {
    */
   static mergeSettings(options) {
     const defaultSettings = {
-      selector: '.looped_carousel',
+      selector: '.carousel',
       transitionDuration: 450,
       easing: 'ease-out',
       perPage: 1,

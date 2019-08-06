@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LoopedCarouselReact from 'looped-carousel/react';
+import LoopedCarouselReact from 'looped-react';
 
 // Optional CONFIG start
 const config = {

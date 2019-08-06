@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LoopedCarouselReact from 'looped-carousel/react';
+import Carousel from 'looped-react';
 
 // Optional CONFIG start
 const config = {
@@ -30,7 +30,7 @@ const config = {
 const App = () => (
   <Wrapper>
     <h1>Looped Carousel React</h1>
-    <LoopedCarouselReact
+    <Carousel
       // Optional CONFIG start
       config={config}
       // Optional CONFIG end
@@ -61,7 +61,7 @@ const App = () => (
       <img src="https://source.unsplash.com/random/500x500" alt="" />
       <img src="https://source.unsplash.com/random/525x525" alt="" />
       <img src="https://source.unsplash.com/random/550x550" alt="" />
-    </LoopedCarouselReact>
+    </Carousel>
   </Wrapper>
 );
 

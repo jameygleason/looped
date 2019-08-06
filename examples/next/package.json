@@ -1,20 +1,20 @@
 {
   "name": "next-example",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
+  "author": "Jamey Gleason <jg.webmedia@gmail.com>",
+  "license": "MIT",
   "main": "pages/index.js",
   "scripts": {
     "start": "next",
     "build": "next build"
   },
-  "author": "Jamey Gleason",
-  "license": "ISC",
   "dependencies": {
     "next": "^8.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "looped-carousel": "^0.1.21",
+    "looped-react": "^1.0.1",
     "styled-components": "^4.2.0"
   }
 }

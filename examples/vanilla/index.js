@@ -1,4 +1,4 @@
-import LoopedCarousel from 'looped-carousel';
+import Carousel from 'looped';
 
 const selector = '.carousel';
 const carousel = document.querySelector(selector);
@@ -16,7 +16,7 @@ const config = {
 // Will initialize with default settings
 const initCarousel =
   carousel &&
-  new LoopedCarousel({
+  new Carousel({
     selector,
     ...config,
   });
