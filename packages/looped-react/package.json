@@ -1,0 +1,69 @@
+{
+  "name": "looped-react",
+  "version": "1.0.0",
+  "description": "A Vanilla JS Carousel that scales with the browser",
+  "author": "Jamey Gleason <jg.webmedia@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jameygleason/looped"
+  },
+  "bugs": {
+    "url": "https://github.com/jameygleason/looped/issues"
+  },
+  "keywords": [
+    "looped",
+    "react",
+    "loading",
+    "react loading component",
+    "loading component"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepare": "yarn run build",
+    "predeploy": "cd example && yarn install && yarn run build",
+    "deploy": "gh-pages -d example/build",
+    "reset": "sh ./scripts/reset.sh"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.5.4",
+    "react": "^15.0.0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/preset-env": "7.5.5",
+    "@babel/preset-react": "7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@svgr/rollup": "^4.3.2",
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-react-require": "^3.1.1",
+    "cross-env": "^5.1.4",
+    "css-loader": "^3.1.0",
+    "gh-pages": "^2.0.1",
+    "react-tagsinput": "^3.19.0",
+    "rollup": "^1.17.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-url": "^2.2.2",
+    "style-loader": "^0.23.1"
+  }
+}
