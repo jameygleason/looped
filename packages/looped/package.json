@@ -1,9 +1,9 @@
 {
   "name": "looped",
-  "version": "1.0.1",
+  "version": "1.0.11",
   "author": "Jamey Gleason <jg.webmedia@gmail.com>",
   "license": "MIT",
-  "description": "A Vanilla JS Carousel that scales with the browser",
+  "description": "A 3kb Vanilla JS Carousel that scales with the browser.",
   "main": "index.js",
   "keywords": [
     "looped",
