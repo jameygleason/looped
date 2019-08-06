@@ -1,0 +1,23 @@
+{
+  "name": "looped",
+  "version": "1.0.0",
+  "author": "Jamey Gleason <jg.webmedia@gmail.com>",
+  "license": "MIT",
+  "description": "A Vanilla JS Carousel that scales with the browser",
+  "main": "looped-carousel.js",
+  "keywords": [
+    "looped",
+    "looped carousel",
+    "carousel",
+    "javascript carousel",
+    "vanilla js carousel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameygleason/looped.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jameygleason/looped/issues"
+  },
+  "homepage": "https://github.com/jameygleason/looped#readme"
+}

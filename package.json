@@ -1,10 +1,10 @@
 {
   "name": "looped",
   "version": "1.0.0",
-  "author": "Jamey Gleason",
+  "author": "Jamey Gleason <jg.webmedia@gmail.com>",
   "license": "MIT",
   "description": "A Vanilla JS Carousel that scales with the browser",
-  "main": "dist/looped-carousel.js",
+  "main": "looped-carousel.js",
   "scripts": {
     "start": "sh ./scripts/npm_install.sh && webpack-dev-server --colors --config config/webpack.dev.js",
     "build": "sh ./scripts/build.sh",
@@ -30,40 +30,19 @@
     "url": "https://github.com/jameygleason/looped/issues"
   },
   "homepage": "https://github.com/jameygleason/looped#readme",
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 10",
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.4.0",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
-    "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.5",
-    "babel-plugin-module-resolver": "^3.2.0",
-    "eslint": "^5.15.3",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-import-resolver-babel-module": "^5.0.1",
-    "eslint-loader": "^2.1.2",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "html-loader": "^0.5.5",
-    "prettier": "^1.16.4",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "uglifyjs-webpack-plugin": "^2.1.2",
-    "webpack": "^4.29.6",
-    "webpack-bundle-analyzer": "^3.1.0",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
-  },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-json": "^1.4.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.2",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2"
+  }
 }
