@@ -43,9 +43,12 @@
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "looped": "*"
+  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-optional-chaining": "^7.0.0",
     "@babel/preset-env": "7.5.5",
     "@babel/preset-react": "7.0.0",

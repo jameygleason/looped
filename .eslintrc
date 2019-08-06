@@ -17,7 +17,6 @@
 	},
 	"plugins": [
 		"prettier",
-		"react-hooks",
 		"json"
 	],
 	"globals": {
@@ -31,30 +30,9 @@
 		"import/core-modules": [
 			"react"
 		],
-		"import/no-unresolved": 2,
-		"import/resolver": {
-			"node": {
-				"moduleDirectory": ["node_modules", "/"],
-			},
-			"babel-module": {
-				"root": ["./src/"],
-				"alias": {
-					"app": "./app/providers",
-				},
-			}
-		}
+		"import/no-unresolved": 2
 	},
 	"rules": {
-		"camelcase": ["error",
-			{
-				"properties": "never",
-				"allow": [
-					"Layout_main",
-					"Layout_blog",
-					"Layout_post"
-				]
-			}
-		],
 		"import/no-extraneous-dependencies": 0,
 		"import/prefer-default-export": 0,
 		"jsx-a11y/anchor-is-valid": ["warn", {
@@ -84,6 +62,7 @@
 				"error"
 			]
 		}],
+		"no-plusplus": 0,
 		"no-unused-expressions": 0,
 		"no-unused-vars": [
 			1,
@@ -91,6 +70,7 @@
 				"argsIgnorePattern": "res|next|^err"
 			}
 		],
+		"no-restricted-syntax": [0, "ForOfStatement"],
 		"no-underscore-dangle": [2, {
 			"allow": [
 				"_id",
@@ -102,17 +82,8 @@
 			"functions": false,
 			"variables": true 
 		}],
-		"react-hooks/rules-of-hooks": 2,
-		"react-hooks/exhaustive-deps": 2,
 		"react/destructuring-assignment": 0,
 		"react/forbid-prop-types": 0,
-		"react/jsx-pascal-case": [0, {
-			"ignore": [
-				"Layout_main",
-				"Layout_blog",
-				"Layout_post"
-			]}
-		],
 		"react/jsx-filename-extension": [1, {
 			"extensions": [".js", ".jsx"]
 		}],

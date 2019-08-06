@@ -1,5 +1,5 @@
 import React from 'react';
-import LoopedCarouselReact from './LoopedCarouselReact';
+import LoopedCarouselReact from 'looped-react';
 
 const config = {
   transitionDuration: 450,

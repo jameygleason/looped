@@ -1,6 +1,9 @@
 {
   "name": "looped",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "reset": "sh ./scripts/reset.sh"
   },

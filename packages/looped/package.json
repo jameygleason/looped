@@ -4,7 +4,7 @@
   "author": "Jamey Gleason <jg.webmedia@gmail.com>",
   "license": "MIT",
   "description": "A Vanilla JS Carousel that scales with the browser",
-  "main": "looped-carousel.js",
+  "main": "index.js",
   "keywords": [
     "looped",
     "looped carousel",

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import LoopedCarousel from './looped-carousel';
+import LoopedCarousel from 'looped';
 
+/* eslint-disable react/require-default-props */
 export default class LoopedCarouselReact extends Component {
   static propTypes = {
     className: PropTypes.string,

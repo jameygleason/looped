@@ -29,10 +29,7 @@ export default class LoopedCarousel {
       ? this.config.startIndex % this.innerElements.length
       : Math.max(
           0,
-          Math.min(
-            this.config.startIndex,
-            this.innerElements.length - this.perPage
-          )
+          Math.min(this.config.startIndex, this.innerElements.length - this.perPage)
         );
     this.transformProperty = LoopedCarousel.webkitOrNot();
 
@@ -206,9 +203,7 @@ export default class LoopedCarousel {
         i < this.innerElements.length;
         i++
       ) {
-        const element = this.buildSliderFrameItem(
-          this.innerElements[i].cloneNode(true)
-        );
+        const element = this.buildSliderFrameItem(this.innerElements[i].cloneNode(true));
         docFragment.appendChild(element);
       }
     }
@@ -220,9 +215,7 @@ export default class LoopedCarousel {
 
     if (this.config.loop) {
       for (let i = 0; i < this.perPage; i++) {
-        const element = this.buildSliderFrameItem(
-          this.innerElements[i].cloneNode(true)
-        );
+        const element = this.buildSliderFrameItem(this.innerElements[i].cloneNode(true));
         docFragment.appendChild(element);
       }
     }
@@ -307,9 +300,7 @@ export default class LoopedCarousel {
         const mirrorSlideIndexOffset = this.perPage;
         const moveTo = mirrorSlideIndex + mirrorSlideIndexOffset;
         const offset =
-          (this.config.rtl ? 1 : -1) *
-          moveTo *
-          (this.selectorWidth / this.perPage);
+          (this.config.rtl ? 1 : -1) * moveTo * (this.selectorWidth / this.perPage);
         const dragDistance = this.config.draggable
           ? this.drag.endX - this.drag.startX
           : 0;
@@ -356,8 +347,7 @@ export default class LoopedCarousel {
 
     if (this.config.loop) {
       const isNewIndexClone =
-        this.currentSlide + howManySlides >
-        this.innerElements.length - this.perPage;
+        this.currentSlide + howManySlides > this.innerElements.length - this.perPage;
       if (isNewIndexClone) {
         this.disableTransition();
 
@@ -365,9 +355,7 @@ export default class LoopedCarousel {
         const mirrorSlideIndexOffset = this.perPage;
         const moveTo = mirrorSlideIndex + mirrorSlideIndexOffset;
         const offset =
-          (this.config.rtl ? 1 : -1) *
-          moveTo *
-          (this.selectorWidth / this.perPage);
+          (this.config.rtl ? 1 : -1) * moveTo * (this.selectorWidth / this.perPage);
         const dragDistance = this.config.draggable
           ? this.drag.endX - this.drag.startX
           : 0;
@@ -439,9 +427,7 @@ export default class LoopedCarousel {
       ? this.currentSlide + this.perPage
       : this.currentSlide;
     const offset =
-      (this.config.rtl ? 1 : -1) *
-      currentSlide *
-      (this.selectorWidth / this.perPage);
+      (this.config.rtl ? 1 : -1) * currentSlide * (this.selectorWidth / this.perPage);
 
     if (enableTransition) {
       // This one is tricky, I know but this is a perfect explanation:
@@ -455,9 +441,7 @@ export default class LoopedCarousel {
         });
       });
     } else {
-      this.sliderFrame.style[
-        this.transformProperty
-      ] = `translate3d(${offset}px, 0, 0)`;
+      this.sliderFrame.style[this.transformProperty] = `translate3d(${offset}px, 0, 0)`;
     }
   }
 
@@ -467,8 +451,7 @@ export default class LoopedCarousel {
    * Recalculate drag/swipe event and reposition the frame of a slider
    */
   updateAfterDrag() {
-    const movement =
-      (this.config.rtl ? -1 : 1) * (this.drag.endX - this.drag.startX);
+    const movement = (this.config.rtl ? -1 : 1) * (this.drag.endX - this.drag.startX);
     const movementDistance = Math.abs(movement);
     const howManySliderToSlide = this.config.multipleDrag
       ? Math.ceil(movementDistance / (this.selectorWidth / this.perPage))
@@ -478,8 +461,7 @@ export default class LoopedCarousel {
       movement > 0 && this.currentSlide - howManySliderToSlide < 0;
     const slideToPositiveClone =
       movement < 0 &&
-      this.currentSlide + howManySliderToSlide >
-        this.innerElements.length - this.perPage;
+      this.currentSlide + howManySliderToSlide > this.innerElements.length - this.perPage;
 
     if (
       movement > 0 &&
@@ -537,8 +519,7 @@ export default class LoopedCarousel {
   touchstartHandler(e) {
     // Prevent dragging / swiping on inputs, selects and textareas
     const ignoreSiema =
-      ['TEXTAREA', 'OPTION', 'INPUT', 'SELECT'].indexOf(e.target.nodeName) !==
-      -1;
+      ['TEXTAREA', 'OPTION', 'INPUT', 'SELECT'].indexOf(e.target.nodeName) !== -1;
     if (ignoreSiema) {
       return;
     }
@@ -588,8 +569,7 @@ export default class LoopedCarousel {
       const offset = this.config.rtl
         ? currentOffset + dragOffset
         : currentOffset - dragOffset;
-      this.sliderFrame.style[this.transformProperty] = `translate3d(${(this
-        .config.rtl
+      this.sliderFrame.style[this.transformProperty] = `translate3d(${(this.config.rtl
         ? 1
         : -1) * offset}px, 0, 0)`;
     }
@@ -601,8 +581,7 @@ export default class LoopedCarousel {
   mousedownHandler(e) {
     // Prevent dragging / swiping on inputs, selects and textareas
     const ignoreSiema =
-      ['TEXTAREA', 'OPTION', 'INPUT', 'SELECT'].indexOf(e.target.nodeName) !==
-      -1;
+      ['TEXTAREA', 'OPTION', 'INPUT', 'SELECT'].indexOf(e.target.nodeName) !== -1;
     if (ignoreSiema) {
       return;
     }
@@ -653,8 +632,7 @@ export default class LoopedCarousel {
       const offset = this.config.rtl
         ? currentOffset + dragOffset
         : currentOffset - dragOffset;
-      this.sliderFrame.style[this.transformProperty] = `translate3d(${(this
-        .config.rtl
+      this.sliderFrame.style[this.transformProperty] = `translate3d(${(this.config.rtl
         ? 1
         : -1) * offset}px, 0, 0)`;
     }
@@ -736,11 +714,8 @@ export default class LoopedCarousel {
     }
 
     // Avoid shifting content
-    const shouldItShift =
-      index <= this.currentSlide > 0 && this.innerElements.length;
-    this.currentSlide = shouldItShift
-      ? this.currentSlide + 1
-      : this.currentSlide;
+    const shouldItShift = index <= this.currentSlide > 0 && this.innerElements.length;
+    this.currentSlide = shouldItShift ? this.currentSlide + 1 : this.currentSlide;
 
     this.innerElements.splice(index, 0, item);
 

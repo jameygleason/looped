@@ -5958,9 +5958,14 @@ loglevel@^1.4.1:
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.3.tgz#77f2eb64be55a404c9fd04ad16d57c1d6d6b1280"
   integrity sha512-LoEDv5pgpvWgPF4kNYuIp0qqSJVWak/dML0RY74xlzMZiT9w77teNAwKYKWBTYjlokMirg+o3jBwp+vlLrcfAA==
 
-"looped@link:..":
+"looped-react@link:..":
   version "0.0.0"
   uid ""
+
+looped@*:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/looped/-/looped-1.0.0.tgz#13f60dbf2a30fc4154363bad4728b688dcd44802"
+  integrity sha512-c7mYXRi/x33htCOpv/UFe35tWwc+U8rn7ZhQLzyr9qrNzGZB/Cm7nvS4BMbevM19HH/pIFI3Gf+E1SENAKT8xQ==
 
 loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
