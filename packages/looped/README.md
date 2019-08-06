@@ -1,3 +1,7 @@
+[![Maintenance Status][status-image]][status-url]
+[![NPM][npm-img]][npm-url]
+[![JavaScript Style Guide][jssg-img]][jssg-url]
+
 # "Looped" Carousel
 
 The _"bring your own styles"_, responsive/dynamic carousel for JavaScript. See examples in the [github](https://github.com/jameygleason/looped/tree/master/examples).
@@ -161,8 +165,8 @@ https://www.npmjs.com/package/looped
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 [status-image]: https://img.shields.io/badge/status-maintained-brightgreen.svg
-[status-url]: https://github.com/tleunen/aperitif.svg
-[npm-img]: https://img.shields.io/npm/v/aperitif.svg
-[npm-url]: https://www.npmjs.com/package/aperitif
+[status-url]: https://github.com/tleunen/looped.svg
+[npm-img]: https://img.shields.io/npm/v/looped.svg
+[npm-url]: https://www.npmjs.com/package/looped
 [jssg-img]: https://img.shields.io/badge/code_style-standard-brightgreen.svg
 [jssg-url]: https://standardjs.com
