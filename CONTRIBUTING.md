@@ -2,7 +2,7 @@
 
 Contributions are **welcome**!
 
-Contributions are accepted via Pull Request on [Github](https://github.com/jameygleason/rescale-carousel).
+Contributions are accepted via Pull Request on [Github](https://github.com/jameygleason/looped-carousel).
 
 ## Pull Requests
 

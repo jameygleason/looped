@@ -1,18 +1,24 @@
-# Rescale Carousel
+# Looped Carousel
 
-The _"bring your own styles"_, responsive/dynamic carousel for JavaScript, with optional React component wrapper. See examples in the [github](https://github.com/jameygleason/rescale-carousel/tree/master/examples).
+The _"bring your own styles"_, responsive/dynamic carousel for JavaScript, with optional React component wrapper. See examples in the [github](https://github.com/jameygleason/looped/tree/master/examples).
 
 Exposes handy methods like `.next()` and `.prev()` on elements that can be easily wired to event handlers in the `onInit` method. 
 
-An easy to configure object syntax allows you to override defaults setting with one line of code. (See defaults in the table below or in the [examples](https://github.com/jameygleason/rescale-carousel/tree/master/examples).)
+An easy to configure object syntax allows you to override defaults setting with one line of code. (See defaults in the table below or in the [examples](https://github.com/jameygleason/looped/tree/master/examples).)
 
 * The config settings are optional in the React Component. It automatically generates and applies a selector. It will fallback to the defaults if no config is passed.
 
-[![rescale-carousel demo](docs/assets/demo.gif)](https://www.youtube.com/watch?v=vvPyo-rluss)
+[![looped demo](docs/assets/demo.gif)](https://www.youtube.com/watch?v=vvPyo-rluss)
 
 ## Installation
 
-`npm install rescale-carousel`
+`npm install looped`
+
+or
+
+`yarn add looped`
+
+
 
 ```html
 <div class="carousel">
@@ -24,10 +30,10 @@ An easy to configure object syntax allows you to override defaults setting with 
 ```
 
 ```js
-import RescaleCarousel from 'rescale-carousel';
+import LoopedCarousel from 'looped';
 
 // Will initialize with default settings
-new RescaleCarousel({
+new LoopedCarousel({
   selector: '.carousel'
 });
 ```
@@ -35,7 +41,7 @@ new RescaleCarousel({
 ### Default settings
 
 ```js
-new RescaleCarousel({
+new LoopedCarousel({
   selector: '.carousel',
   transitionDuration: 450,
   easing: 'ease-out',
@@ -60,7 +66,7 @@ new RescaleCarousel({
 Pass an object to `perPage` and prefix window width with `w`. Since the default is 1, the properties are applied from narrowest window width to widest window width.
 
 ```js
-new RescaleCarousel({
+new LoopedCarousel({
   ...
   perPage: {
     // Falls back to the default of 1 below 750px
@@ -119,7 +125,7 @@ This carousel would not be possible without the fine work done on Siema.
 
 ## NPM
 
-https://www.npmjs.com/package/rescale-carousel
+https://www.npmjs.com/package/looped
 
 ## License
 

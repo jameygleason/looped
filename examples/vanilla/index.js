@@ -1,4 +1,4 @@
-import RescaleCarousel from 'rescale-carousel';
+import LoopedCarousel from 'looped-carousel';
 
 const selector = '.carousel';
 const carousel = document.querySelector(selector);
@@ -16,7 +16,7 @@ const config = {
 // Will initialize with default settings
 const initCarousel =
   carousel &&
-  new RescaleCarousel({
+  new LoopedCarousel({
     selector,
     ...config,
   });

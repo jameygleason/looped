@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RescaleCarousel from './rescale-carousel';
+import LoopedCarousel from './looped-carousel';
 import App from './App';
 
 const selector = '.carousel';
@@ -19,7 +19,7 @@ const config = {
 // Will initialize with default settings
 const caro =
   carousel &&
-  new RescaleCarousel({
+  new LoopedCarousel({
     selector,
     ...config,
   });

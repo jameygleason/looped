@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import RescaleCarouselReact from 'rescale-carousel/react';
+import LoopedCarouselReact from 'looped-carousel/react';
 
 // Optional CONFIG start
 const config = {
@@ -29,9 +29,9 @@ const config = {
 
 const App = () => (
   <Wrapper>
-    <h1>Rescale Carousel NextJS</h1>
+    <h1>Looped Carousel NextJS</h1>
     {typeof window !== 'undefined' && (
-      <RescaleCarouselReact
+      <LoopedCarouselReact
         // Optional CONFIG start
         config={config}
         // Optional CONFIG end
@@ -62,7 +62,7 @@ const App = () => (
         <img src="https://source.unsplash.com/random/500x500" alt="" />
         <img src="https://source.unsplash.com/random/525x525" alt="" />
         <img src="https://source.unsplash.com/random/550x550" alt="" />
-      </RescaleCarouselReact>
+      </LoopedCarouselReact>
     )}
   </Wrapper>
 );

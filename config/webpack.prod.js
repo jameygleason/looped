@@ -60,13 +60,13 @@ const config = {
 };
 console.log('config:', config);
 
-const rescaleCarouselConfig = {
-  name: 'rescale-carousel',
-  entry: path.resolve(__dirname, '../src/rescale-carousel.js'),
+const loopedCarouselConfig = {
+  name: 'looped-carousel',
+  entry: path.resolve(__dirname, '../src/looped-carousel.js'),
   output: {
     path: path.join(__dirname, '../dist'),
-    filename: 'rescale-carousel.js',
-    library: 'Rescale Carousel',
+    filename: 'looped-carousel.js',
+    library: 'Looped Carousel',
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
@@ -74,18 +74,18 @@ const rescaleCarouselConfig = {
 };
 
 const reactCarouselConfig = {
-  name: 'rescale-carousel-react',
+  name: 'looped-carousel-react',
   entry: {
-    index: path.resolve(__dirname, '../src/RescaleCarouselReact.js'),
+    index: path.resolve(__dirname, '../src/LoopedCarouselReact.js'),
   },
   output: {
     path: path.join(__dirname, '../react'),
     filename: '[name].js',
-    library: 'Rescale Carousel',
+    library: 'Looped Carousel',
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
   ...config,
 };
 
-module.exports = [rescaleCarouselConfig, reactCarouselConfig];
+module.exports = [loopedCarouselConfig, reactCarouselConfig];

@@ -1,5 +1,5 @@
 import React from 'react';
-import RescaleCarouselReact from './RescaleCarouselReact';
+import LoopedCarouselReact from './LoopedCarouselReact';
 
 const config = {
   transitionDuration: 450,
@@ -26,7 +26,7 @@ const config = {
 };
 
 const App = () => (
-  <RescaleCarouselReact
+  <LoopedCarouselReact
     config={config}
     prev={prev => (
       <button type="button" onClick={prev}>
@@ -53,7 +53,7 @@ const App = () => (
     <img src="https://source.unsplash.com/random/400x400?i=12" alt="" />
     <img src="https://source.unsplash.com/random/400x400" alt="" />
     <img src="https://source.unsplash.com/random/425x425?j=13" alt="" />
-  </RescaleCarouselReact>
+  </LoopedCarouselReact>
 );
 
 export default App;

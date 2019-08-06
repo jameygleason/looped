@@ -1,5 +1,5 @@
 {
-  "name": "rescale-carousel-vanilla-js",
+  "name": "looped-carousel-vanilla-js",
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
@@ -8,6 +8,6 @@
   "author": "Jamey Gleason",
   "dependencies": {
     "parcel-bundler": "^1.12.2",
-    "rescale-carousel": "^0.1.21"
+    "looped-carousel": "^0.1.21"
   }
 }

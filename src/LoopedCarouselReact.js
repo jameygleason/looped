@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import RescaleCarousel from './rescale-carousel';
+import LoopedCarousel from './looped-carousel';
 
-export default class RescaleCarouselReact extends Component {
+export default class LoopedCarouselReact extends Component {
   static propTypes = {
     className: PropTypes.string,
     config: PropTypes.shape({
@@ -49,7 +49,7 @@ export default class RescaleCarouselReact extends Component {
       window &&
       document &&
       this.selector &&
-      new RescaleCarousel({
+      new LoopedCarousel({
         selector: `.${this.selector}`,
         ...this.props.config,
       });

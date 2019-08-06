@@ -1,12 +1,12 @@
-export default class RescaleCarousel {
+export default class LoopedCarousel {
   /**
-   * Create a RescaleCarousel.
+   * Create a LoopedCarousel.
    * @param {Object} options - Optional settings object.
    */
 
   constructor(options) {
     // Merge defaults with user's settings
-    this.config = RescaleCarousel.mergeSettings(options);
+    this.config = LoopedCarousel.mergeSettings(options);
 
     // Resolve selector's type
     this.selector =
@@ -34,7 +34,7 @@ export default class RescaleCarousel {
             this.innerElements.length - this.perPage
           )
         );
-    this.transformProperty = RescaleCarousel.webkitOrNot();
+    this.transformProperty = LoopedCarousel.webkitOrNot();
 
     // Bind all event handlers for reference-ability
     [
@@ -62,7 +62,7 @@ export default class RescaleCarousel {
    */
   static mergeSettings(options) {
     const defaultSettings = {
-      selector: '.rescale_carousel',
+      selector: '.looped_carousel',
       transitionDuration: 450,
       easing: 'ease-out',
       perPage: 1,
@@ -405,12 +405,8 @@ export default class RescaleCarousel {
    * Enable transition on sliderFrame.
    */
   enableTransition() {
-    this.sliderFrame.style.webkitTransition = `all ${
-      this.config.transitionDuration
-    }ms ${this.config.easing}`;
-    this.sliderFrame.style.transition = `all ${
-      this.config.transitionDuration
-    }ms ${this.config.easing}`;
+    this.sliderFrame.style.webkitTransition = `all ${this.config.transitionDuration}ms ${this.config.easing}`;
+    this.sliderFrame.style.transition = `all ${this.config.transitionDuration}ms ${this.config.easing}`;
   }
 
   /**
