@@ -1,0 +1,25 @@
+{
+  "name": "looped",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "sh ./scripts/push.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/jameygleason/looped.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/jameygleason/looped/issues"
+  },
+  "homepage": "https://gitlab.com/jameygleason/looped#readme"
+}
