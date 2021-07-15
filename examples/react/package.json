@@ -2,7 +2,7 @@
   "name": "looped-carousel-demo-react",
   "private": true,
   "version": "1.0.0",
-  "author": "Jamey Gleason <jg.webmedia@gmail.com>",
+  "author": "Jamey Gleason <todo@example.com>",
   "license": "MIT",
   "scripts": {
     "start": "react-scripts start",

@@ -2,7 +2,7 @@
   "name": "looped-react",
   "version": "1.0.11",
   "description": "A React component for easily implementing \"looped\", a 3kb JavaScript carousel that scales with the browser.",
-  "author": "Jamey Gleason <jg.webmedia@gmail.com>",
+  "author": "Jamey Gleason <todo@example.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

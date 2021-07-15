@@ -2,14 +2,14 @@
   "name": "looped-carousel-demo-vanilla-js",
   "private": true,
   "version": "1.0.0",
-  "author": "Jamey Gleason <jg.webmedia@gmail.com>",
+  "author": "Jamey Gleason <todo@example.com>",
   "license": "MIT",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html"
   },
   "dependencies": {
-    "looped": "^1.0.1",
+    "@signalchain/looped": "^0.0.1",
     "parcel-bundler": "^1.12.2"
   }
 }

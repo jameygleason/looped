@@ -2,7 +2,7 @@
   "name": "next-example",
   "private": true,
   "version": "1.0.0",
-  "author": "Jamey Gleason <jg.webmedia@gmail.com>",
+  "author": "Jamey Gleason <todo@example.com>",
   "license": "MIT",
   "main": "pages/index.js",
   "scripts": {
